@@ -9,12 +9,14 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+// Implementación del servicio que gestiona la lógica de la aplicacion de libros
 @Service
 public class BookServiceImpl implements BookService {
 
     @Autowired
     private BookRepository bookRepository;
 
+    // Obtiene un libro por su ID
     @Override
     public Book getBookById(Long id) {
         Optional<Book> bookOptional = bookRepository.findById(id);
@@ -25,17 +27,20 @@ public class BookServiceImpl implements BookService {
         }
     }
 
+    // Obtiene todos los libros
     @Override
     public List<Book> getAllBooks() {
         return bookRepository.findAll();
     }
 
+    // Crea un nuevo libro
     @Override
     public Book createBook(Book book) {
         book.setId(null); // Para asegurarse de que se cree un nuevo libro en lugar de actualizar uno existente
         return bookRepository.save(book);
     }
 
+    // Actualiza un libro existente
     @Override
     public Book updateBook(Book book, Long id) {
         Book existingBook = getBookById(id); // Verifica si el libro existe
@@ -45,6 +50,7 @@ public class BookServiceImpl implements BookService {
         return bookRepository.save(existingBook);
     }
 
+    // Elimina un libro por su ID
     @Override
     public void deleteBook(Long id) {
         Book existingBook = getBookById(id);

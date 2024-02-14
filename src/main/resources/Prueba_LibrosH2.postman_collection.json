@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "aff97d26-3d33-4b4c-a50e-0c5ed8a4638a",
+		"name": "Prueba_LibrosH2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30607908"
+	},
+	"item": [
+		{
+			"name": "Ver_Libros_Todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/books"
+			},
+			"response": []
+		},
+		{
+			"name": "Ver_Libros_Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/books/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear_Libro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Orgullo y prejuicio\",\r\n    \"author\": \"Jane Austen\",\r\n    \"publicationYear\": 1813\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/books"
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar_Libro",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"1984\",\r\n    \"author\": \"George Orwell\",\r\n    \"publicationYear\": 1950\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/books/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar_Libro",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/books/2"
+			},
+			"response": []
+		}
+	]
+}
